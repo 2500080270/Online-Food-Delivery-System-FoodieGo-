@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FoodieGo - Online Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>🍽️</span>
+            FoodieGo
+        </div>
+
+        <div class="nav-text">
+            Online Food Delivery System
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN LOGIN AREA ================= -->
+
+    <main class="main-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <p class="small-title">
+                    WELCOME TO FOODIEGO
+                </p>
+
+                <h1>
+                    Delicious food,
+                    <span>one click away.</span>
+                </h1>
+
+                <p class="description">
+                    Order from your favourite restaurants and enjoy
+                    a simple, convenient and secure food delivery
+                    experience.
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <span>🍔</span>
+
+                        <div>
+                            <h3>Wide Variety</h3>
+
+                            <p>
+                                Explore different restaurants
+                                and cuisines.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <span>🚴</span>
+
+                        <div>
+                            <h3>Quick Delivery</h3>
+
+                            <p>
+                                Track your orders from preparation
+                                to delivery.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <span>🔒</span>
+
+                        <div>
+                            <h3>Secure Access</h3>
+
+                            <p>
+                                Separate access for users and
+                                administrators.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= AUTH CARD ================= -->
+
+        <section class="auth-card">
+
+
+            <!-- AUTH HEADER -->
+
+            <div class="auth-header">
+
+                <h2 id="formTitle">
+                    User Login
+                </h2>
+
+                <p id="formSubtitle">
+                    Login to continue to FoodieGo
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= LOGIN TABS ================= -->
+
+            <div class="login-tabs">
+
+                <button
+                    class="tab active"
+                    id="userTab"
+                    onclick="showUserLogin()">
+
+                    User
+
+                </button>
+
+
+                <button
+                    class="tab"
+                    id="adminTab"
+                    onclick="showAdminLogin()">
+
+                    Admin
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= USER LOGIN ================= -->
+
+            <form id="userLoginForm">
+
+
+                <label for="loginUsername">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="Enter username"
+                    required
+                >
+
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <!-- FORGOT PASSWORD -->
+
+                <div class="forgot-password">
+
+                    <span onclick="forgotPassword()">
+                        Forgot Password?
+                    </span>
+
+                </div>
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <p
+                    class="message"
+                    id="loginMessage">
+                </p>
+
+
+                <!-- NORMAL LOGIN -->
+
+                <button
+                    type="submit"
+                    class="main-button">
+
+                    Login as User
+
+                </button>
+
+
+
+                <!-- OR DIVIDER -->
+
+                <div class="or-divider">
+
+                    <span>OR</span>
+
+                </div>
+
+
+
+                <!-- SOCIAL LOGIN -->
+
+                <div class="social-login">
+
+
+                    <!-- GOOGLE -->
+
+                    <button
+                        type="button"
+                        class="social-btn google-btn"
+                        onclick="googleLogin()">
+
+                        <span class="google-icon">
+                            G
+                        </span>
+
+                        Continue with Google
+
+                    </button>
+
+
+
+                    <!-- PHONE -->
+
+                    <button
+                        type="button"
+                        class="social-btn phone-btn"
+                        onclick="phoneLogin()">
+
+                        <span>
+                            📱
+                        </span>
+
+                        Continue with Phone
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REGISTER -->
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <span onclick="showRegister()">
+                        Create Account
+                    </span>
+
+                </p>
+
+            </form>
+
+
+
+            <!-- ================= ADMIN LOGIN ================= -->
+
+            <form
+                id="adminLoginForm"
+                class="hidden">
+
+
+                <label for="adminUsername">
+                    Admin Username
+                </label>
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    placeholder="Enter admin username"
+                    required
+                >
+
+
+                <label for="adminPassword">
+                    Admin Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <!-- DEMO LOGIN -->
+
+                <p class="demo-login">
+
+                    Demo Admin:
+
+                    <b>admin</b>
+
+                    /
+
+                    <b>admin123</b>
+
+                </p>
+
+
+                <!-- ADMIN MESSAGE -->
+
+                <p
+                    class="message"
+                    id="adminMessage">
+                </p>
+
+
+                <!-- ADMIN LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="main-button admin-button">
+
+                    Login as Admin
+
+                </button>
+
+
+                <p class="admin-note">
+
+                    🔐 Admin access is restricted to
+                    authorized personnel.
+
+                </p>
+
+            </form>
+
+
+
+            <!-- ================= USER REGISTRATION ================= -->
+
+            <form
+                id="registerForm"
+                class="hidden">
+
+
+                <h3 class="register-heading">
+                    Create User Account
+                </h3>
+
+
+                <p class="register-description">
+                    Register to start ordering your favourite food.
+                </p>
+
+
+                <!-- NAME -->
+
+                <label for="registerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <!-- USERNAME -->
+
+                <label for="registerUsername">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="registerUsername"
+                    placeholder="Choose a username"
+                    required
+                >
+
+
+                <!-- MOBILE -->
+
+                <label for="registerMobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="registerMobile"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    required
+                >
+
+
+                <!-- PASSWORD -->
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create password"
+                    required
+                >
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                >
+
+
+                <!-- REGISTER MESSAGE -->
+
+                <p
+                    class="message"
+                    id="registerMessage">
+                </p>
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    class="main-button">
+
+                    Create Account
+
+                </button>
+
+
+                <!-- BACK TO LOGIN -->
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <span onclick="showUserLogin()">
+                        Login
+                    </span>
+
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         USER DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="userDashboard"
+        class="dashboard hidden">
+
+
+        <!-- DASHBOARD HEADER -->
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <p class="small-title">
+                    USER DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome,
+                    <span id="userWelcome"></span>
+                    👋
+                </h1>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+
+
+        <!-- USER ACCESS INFO -->
+
+        <div class="access-banner user-banner">
+
+            <span>👤</span>
+
+            <div>
+
+                <h3>
+                    Customer Access
+                </h3>
+
+                <p>
+                    You have access to food ordering and
+                    your personal account features.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- USER DASHBOARD CARDS -->
+
+        <div class="dashboard-grid">
+
+
+            <!-- BROWSE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🍴
+                </div>
+
+                <h3>
+                    Browse Restaurants
+                </h3>
+
+                <p>
+                    Explore restaurants and available
+                    food items.
+                </p>
+
+                <button
+                    onclick="navigateToModule('userRestaurants')">
+
+                    Browse
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MENU -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <h3>
+                    View Menu
+                </h3>
+
+                <p>
+                    Check menus and choose your
+                    favourite dishes.
+                </p>
+
+                <button
+                    onclick="navigateToModule('userMenu')">
+
+                    View Menu
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORDER -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    Place Order
+                </h3>
+
+                <p>
+                    Add food items and place
+                    your order.
+                </p>
+
+                <button
+                    onclick="navigateToModule('placeOrder')">
+
+                    Order Food
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORDERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📦
+                </div>
+
+                <h3>
+                    My Orders
+                </h3>
+
+                <p>
+                    View your previous and
+                    current orders.
+                </p>
+
+                <button
+                    onclick="navigateToModule('myOrders')">
+
+                    My Orders
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PROFILE -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    👤
+                </div>
+
+                <h3>
+                    My Profile
+                </h3>
+
+                <p>
+                    View and manage your
+                    account information.
+                </p>
+
+                <button
+                    onclick="navigateToModule('profile')">
+
+                    Profile
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RESTRICTED -->
+
+            <div class="dashboard-card restricted">
+
+                <div class="card-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Admin Controls
+                </h3>
+
+                <p>
+                    Restricted access. Only
+                    administrators can use this.
+                </p>
+
+                <button
+                    onclick="restrictedAccess()">
+
+                    Restricted
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ADMIN DASHBOARD
+    ====================================================== -->
+
+    <section
+        id="adminDashboard"
+        class="dashboard hidden">
+
+
+        <!-- ADMIN HEADER -->
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <p class="small-title">
+                    ADMIN DASHBOARD
+                </p>
+
+                <h1>
+                    Welcome, Administrator 👑
+                </h1>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+
+                Logout
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ADMIN ACCESS INFO -->
+
+        <div class="access-banner admin-banner">
+
+            <span>👑</span>
+
+            <div>
+
+                <h3>
+                    Full System Access
+                </h3>
+
+                <p>
+                    Administrator can manage users,
+                    restaurants, orders and reports.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADMIN STATISTICS -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <span>
+                    👥
+                </span>
+
+                <div>
+
+                    <p>
+                        Total Users
+                    </p>
+
+                    <h2 id="totalUsers">
+                        0
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    🍽️
+                </span>
+
+                <div>
+
+                    <p>
+                        Restaurants
+                    </p>
+
+                    <h2>
+                        6
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    📦
+                </span>
+
+                <div>
+
+                    <p>
+                        Total Orders
+                    </p>
+
+                    <h2>
+                        24
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>
+                    💰
+                </span>
+
+                <div>
+
+                    <p>
+                        Revenue
+                    </p>
+
+                    <h2>
+                        ₹8,450
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADMIN CONTROLS -->
+
+        <div class="admin-section">
+
+            <h2>
+                Administration Controls
+            </h2>
+
+
+            <div class="admin-grid">
+
+
+                <!-- USERS -->
+
+                <div class="admin-card">
+
+                    <span>
+                        👥
+                    </span>
+
+                    <h3>
+                        Manage Users
+                    </h3>
+
+                    <p>
+                        View and manage registered
+                        users.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('manageUsers')">
+
+                        Manage
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- RESTAURANTS -->
+
+                <div class="admin-card">
+
+                    <span>
+                        🏪
+                    </span>
+
+                    <h3>
+                        Manage Restaurants
+                    </h3>
+
+                    <p>
+                        Add, edit or remove
+                        restaurants.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('manageRestaurants')">
+
+                        Manage
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ORDERS -->
+
+                <div class="admin-card">
+
+                    <span>
+                        📦
+                    </span>
+
+                    <h3>
+                        Manage Orders
+                    </h3>
+
+                    <p>
+                        Monitor all customer
+                        orders.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('manageOrders')">
+
+                        Manage
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REPORTS -->
+
+                <div class="admin-card">
+
+                    <span>
+                        📊
+                    </span>
+
+                    <h3>
+                        Reports
+                    </h3>
+
+                    <p>
+                        View food delivery
+                        system reports.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('reports')">
+
+                        View Reports
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- ADD RESTAURANT -->
+
+                <div class="admin-card">
+
+                    <span>
+                        ➕
+                    </span>
+
+                    <h3>
+                        Add Restaurant
+                    </h3>
+
+                    <p>
+                        Add a new restaurant
+                        to the platform.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('manageRestaurants')">
+
+                        Add
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- SETTINGS -->
+
+                <div class="admin-card">
+
+                    <span>
+                        ⚙️
+                    </span>
+
+                    <h3>
+                        System Settings
+                    </h3>
+
+                    <p>
+                        Manage system
+                        configuration.
+                    </p>
+
+                    <button
+                        onclick="navigateToModule('settings')">
+
+                        Settings
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- =====================================================
+         WORKING USER MODULES
+    ====================================================== -->
+
+    <section id="moduleArea" class="dashboard hidden">
+
+        <div class="dashboard-top">
+            <div>
+                <p class="small-title" id="moduleRoleTitle">USER MODULE</p>
+                <h1 id="moduleTitle">Module</h1>
+                <p class="description" id="moduleDescription"></p>
+            </div>
+            <button class="logout-button" onclick="backToDashboard()">← Back to Dashboard</button>
+        </div>
+
+        <!-- USER: RESTAURANTS -->
+        <div id="userRestaurantsModule" class="module-panel hidden">
+            <div class="module-heading"><h2>🍴 Browse Restaurants</h2><p>Explore available restaurants and cuisines.</p></div>
+            <div id="restaurantList" class="module-grid"></div>
+        </div>
+
+        <!-- USER: MENU -->
+        <div id="userMenuModule" class="module-panel hidden">
+            <div class="module-heading"><h2>📋 View Menu</h2><p>Choose your favourite dish and place an order.</p></div>
+            <div class="module-grid">
+                <div class="module-item"><div class="module-icon">🍛</div><h3>Chicken Biryani</h3><p>Fragrant rice, chicken and traditional spices.</p><strong>₹220</strong><button onclick="placeFoodOrder('Chicken Biryani',220)">Order Now</button></div>
+                <div class="module-item"><div class="module-icon">🍕</div><h3>Veg Pizza</h3><p>Fresh vegetables, cheese and pizza sauce.</p><strong>₹180</strong><button onclick="placeFoodOrder('Veg Pizza',180)">Order Now</button></div>
+                <div class="module-item"><div class="module-icon">🍔</div><h3>Classic Burger</h3><p>Classic burger with fresh vegetables.</p><strong>₹150</strong><button onclick="placeFoodOrder('Classic Burger',150)">Order Now</button></div>
+                <div class="module-item"><div class="module-icon">🥗</div><h3>Green Bowl</h3><p>Healthy bowl with fresh vegetables and grains.</p><strong>₹170</strong><button onclick="placeFoodOrder('Green Bowl',170)">Order Now</button></div>
+            </div>
+        </div>
+
+        <!-- USER: PLACE ORDER -->
+        <div id="placeOrderModule" class="module-panel hidden">
+            <div class="module-heading"><h2>🛒 Place Order</h2><p>Select an item below to place your food order.</p></div>
+            <div class="module-grid">
+                <div class="module-item compact"><h3>🍛 Chicken Biryani</h3><strong>₹220</strong><button onclick="placeFoodOrder('Chicken Biryani',220)">Place Order</button></div>
+                <div class="module-item compact"><h3>🍕 Veg Pizza</h3><strong>₹180</strong><button onclick="placeFoodOrder('Veg Pizza',180)">Place Order</button></div>
+                <div class="module-item compact"><h3>🍔 Classic Burger</h3><strong>₹150</strong><button onclick="placeFoodOrder('Classic Burger',150)">Place Order</button></div>
+                <div class="module-item compact"><h3>🥗 Green Bowl</h3><strong>₹170</strong><button onclick="placeFoodOrder('Green Bowl',170)">Place Order</button></div>
+            </div>
+        </div>
+
+        <!-- USER: MY ORDERS -->
+        <div id="myOrdersModule" class="module-panel hidden">
+            <div class="module-heading"><h2>📦 My Orders</h2><p>View your current and previous orders.</p></div>
+            <div id="myOrdersList" class="module-list"></div>
+        </div>
+
+        <!-- USER: PROFILE -->
+        <div id="profileModule" class="module-panel hidden">
+            <div class="module-heading"><h2>👤 My Profile</h2><p>Your registered account information.</p></div>
+            <div id="profileDetails" class="profile-box"></div>
+        </div>
+
+        <!-- ADMIN: MANAGE USERS -->
+        <div id="manageUsersModule" class="module-panel hidden">
+            <div class="module-heading"><h2>👥 Manage Users</h2><p>View all registered customer accounts.</p></div>
+            <div id="adminUsersList" class="module-list"></div>
+        </div>
+
+        <!-- ADMIN: MANAGE RESTAURANTS -->
+        <div id="manageRestaurantsModule" class="module-panel hidden">
+            <div class="module-heading"><h2>🏪 Manage Restaurants</h2><p>Add or remove restaurants from the platform.</p></div>
+            <div class="module-form-row"><input id="newRestaurantName" placeholder="Restaurant name"><input id="newRestaurantCuisine" placeholder="Cuisine"><button onclick="addRestaurant()">Add Restaurant</button></div>
+            <div id="adminRestaurantsList" class="module-list"></div>
+        </div>
+
+        <!-- ADMIN: MANAGE ORDERS -->
+        <div id="manageOrdersModule" class="module-panel hidden">
+            <div class="module-heading"><h2>📦 Manage Orders</h2><p>Monitor orders and update their status.</p></div>
+            <div id="adminOrdersList" class="module-list"></div>
+        </div>
+
+        <!-- ADMIN: REPORTS -->
+        <div id="reportsModule" class="module-panel hidden">
+            <div class="module-heading"><h2>📊 Reports</h2><p>View a live summary of the current prototype data.</p></div>
+            <div class="stats-grid module-stats">
+                <div class="stat-card"><span>👥</span><div><p>Total Users</p><h2 id="reportUsers">0</h2></div></div>
+                <div class="stat-card"><span>🏪</span><div><p>Restaurants</p><h2 id="reportRestaurants">0</h2></div></div>
+                <div class="stat-card"><span>📦</span><div><p>Total Orders</p><h2 id="reportOrders">0</h2></div></div>
+                <div class="stat-card"><span>💰</span><div><p>Order Value</p><h2 id="reportRevenue">₹0</h2></div></div>
+            </div>
+            <div class="profile-box"><h3>System Status</h3><p>Signup, Login, Local Storage, role-based access, module navigation and order management are working in this first-review prototype.</p></div>
+        </div>
+
+        <!-- ADMIN: SETTINGS -->
+        <div id="settingsModule" class="module-panel hidden">
+            <div class="module-heading"><h2>⚙️ System Settings</h2><p>Basic configuration information for the prototype.</p></div>
+            <div class="profile-box"><h3>FoodieGo Settings</h3><p>Authentication: Local Storage</p><p>Access Control: User / Admin</p><p>Frontend: HTML, CSS and JavaScript</p><p>UI Layout: CSS Grid and Flexbox</p><button onclick="clearDemoOrders()">Clear Demo Orders</button></div>
+        </div>
+    </section>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast"></div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
